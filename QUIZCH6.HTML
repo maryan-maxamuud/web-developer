@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+        }
+
+        nav { 
+            justify-content: space-around;
+            color:blueviolet;
+            text-align: right;
+            padding: 20px;
+            padding: 0.5em;
+            top: 0;
+            width: 100;
+            margin: 15px top;;
+           
+            b
+           
+           
+        }
+
+        nav a {
+            color: ;
+            text-decoration: none;
+             font-size: 18px;
+             margin: 0 1em;
+        }
+
+        #slider {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+
+        #slider img {
+            width: 100%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#">Home   </a>
+    <a href="#"> About    </a>
+    <a href="#"> Contect  </a>
+    <a href="#"> Spon    </a>
+    <a href="#">  News    </a>
+</nav>
+
+<div id="slider">
+    <img src="M.JPG" alt="Image 1">
+    <img src="img.jpg" alt="Image 2">
+</div>
+
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll("#slider img");
+
+    function showImage(index) {
+        images.forEach((image, i) => {
+            image.style.display = i === index ? "block" : "none";
+        });
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    setInterval(nextImage, 2000);
+</script>
+<h1>Welcome to My Home Page</h1>
+
+
+</body>
+</html>
